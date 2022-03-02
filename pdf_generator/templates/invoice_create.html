@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content_head %}
+<h2> Fill in the form </h2>
+<form method="post">
+    {% csrf_token %}
+    <p name="invoice_date">Invoice Id : {{ invoice_id }}</p> 
+    <p>Date: <input type="date" name="Date"></p>
+
+    <p>Seller ID: <input type='{{ invoice.seller_id }}' name="seller_id"></p>
+
+    <h3> Enter Buyer Details</h3>
+    <p>Name: <input type='{{ invoice.buyer_name }}' name="buyer_name"></p>
+    <p>Address: <input type='{{ invoice.buyer_address }}' name="buyer_address"></p>
+    <p>Phone: <input type='{{ invoice.buyer_phone }}' name="buyer_phone"></p>
+
+    <h3> Enter Products</h3>
+    {{ product_form }}<br> 
+    <input type="submit"  value="View Invoice" >
+    
+</form>
+<br>
+
+
+
+{% endblock content_head %}

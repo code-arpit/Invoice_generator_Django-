@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content_head %}
+<div class="container-sm">
+    <h3> Final Invoice </h3>
+        <table width = 800 border="1%" border-spacing="30px">
+            <thead><tr> 
+                <th colspan="2"> Invoice Date : {{ date }}</th>
+            </tr></thead>
+            <tr> 
+                <th colspan="2"> Invoice ID : {{ id }}</th>
+            </tr>
+            <tr height=20px> </tr>
+            <tr>
+                <th scope="col" width="50%"> Seller Details</th>
+                <th scope="col" width="50%"> Buyer Details</th>
+            </tr>
+            <tbody>
+                <tr>
+                    <td>Name : {{ seller_name }}</td>
+                    <td>Name : {{ buyer_name }}</td>
+                </tr>
+                <tr>
+                    <td>Address : {{ seller_address }}</td>
+                    <td>Address : {{ buyer_address }}</td>
+                </tr>
+                <tr>
+                    <td>Phone : {{ seller_phone }}</td>
+                    <td>Phone : {{ buyer_phone }}</td>
+                </tr>
+            </tbody>
+    
+    </table>
+    <br>
+    
+    <table width = 800 border="1%" border-spacing: 30px;>
+        
+        <thead><tr>
+            <th scope="col" width="10%">Product ID</th>
+            <th scope="col" width="20%">Product</th>
+            <th scope="col" width="15%">Price</th>
+            <th scope="col" width="15%">Quantity</th>
+            <th scope="col" width="15%"> Amount </th>
+        </tr></thead>
+        <tbody>
+            <tr>
+                <td> {{ product_id }} </td>
+                <td> {{ product_name }}</td>
+                <td id="price"> {{ product_price }}</td> 
+                <td id="quantity"> {{ product_quantity }}</td>
+                <td > {{product_amount}} </td>            
+            </tr>
+        </tbody>
+    </table>  
+    <br>
+    
+<table width = 800 border="1%">
+    <tr>
+        <th style="text-align:center"> Total Amount: {{ total_amount }} </th>
+    </tr> 
+</table>
+<br>
+<a href="pdf/"><button type="button"> VIEW PDF</button> </a>
+</div>
+
+
+
+{% endblock content_head %}

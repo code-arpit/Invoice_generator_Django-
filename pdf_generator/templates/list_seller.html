@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load rest_framework %}
+{% block content_head %}
+    
+<a href="/"> <button type='button'> Home </button></a>
+<h2>Sellers</h2>
+<ul>
+    {% for profile in Sellers %}
+    <li>
+        {{ profile.name }} --> 
+        <a href="{{profile.id}}/"> View/Update </a>
+    </li>
+    {% endfor %}
+</ul>
+    <a href="/seller_create/"> <button type='button'> Add New Seller </button></a>
+{% endblock content_head %}

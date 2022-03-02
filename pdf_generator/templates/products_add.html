@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content_head %}
+<h3> Enter Product Details</h3>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type = 'submit' value = 'Add more'>
+</form>
+<br>
+<a href="/invoice_create/"><button type="button">Create Invoice</button></a>
+
+{% endblock content_head %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load rest_framework %}
+{% block content_head %}
+
+<a href="/"> <button type='button'> Home </button></a>
+
+<h3> Edit Seller </h3>
+<form class="form-verticle" action="{% url 'detail_seller' pk=seller.id %}" method="POST">
+    {% csrf_token %}
+    {% render_form serializer %}
+    <input type="submit" value="'Save" >
+</form>
+
+
+{% endblock content_head %}
